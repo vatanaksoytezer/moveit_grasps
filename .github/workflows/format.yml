@@ -26,6 +26,6 @@ jobs:
           sudo apt-get -q install python-rosdep
           sudo rosdep init
           rosdep update
-          sudo apt-get -q install catkin-lint
+          sudo apt-get -q install python-catkin-lint
           export ROS_DISTRO=melodic
       - uses: pre-commit/action@v2.0.0
