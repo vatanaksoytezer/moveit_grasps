@@ -53,7 +53,9 @@ jobs:
             ccache-${{ env.CACHE_PREFIX }}-
       - name: industrial_ci
         uses: 'tylerjw/industrial_ci@clang-tidy-modified-filter'
-        env: ${{ matrix.env }}
+        env:
+          - CCOV: true
+          - ROS_DISTRO: melodic
       - name: upload test artifacts (on failure)
         uses: actions/upload-artifact@v2
         if: failure()
